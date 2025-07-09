@@ -1,0 +1,271 @@
+:root {
+  --primary: #6c5ce7;
+  --primary-light: #a29bfe;
+  --secondary: #00b894;
+  --background: #f9f9f9;
+  --text: #2d3436;
+  --text-light: #636e72;
+  --white: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --primary: #8c7ae6;
+  --primary-light: #6c5ce7;
+  --secondary: #00cec9;
+  --background: #2d3436;
+  --text: #dfe6e9;
+  --text-light: #b2bec3;
+  --white: #34495e;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: var(--transition);
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.login-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.login-card h1 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.login-card input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.login-card button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.login-card button:hover {
+  background-color: var(--primary-light);
+}
+
+header {
+  background-color: var(--white);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-buttons button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-buttons button:hover {
+  background-color: var(--primary-light);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#logout {
+  background-color: #ff7675;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#logout:hover {
+  background-color: #e84393;
+}
+
+.calendar-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.weekdays div {
+  padding: 0.5rem;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: #ddd;
+}
+
+.day {
+  aspect-ratio: 1;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.day:hover {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+.day:hover .day-checkbox {
+  border-color: white;
+}
+
+.day-number {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  pointer-events: none;
+}
+
+.day-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.day-checkbox:checked {
+  background-color: var(--primary);
+}
+
+.other-month {
+  color: var(--text-light);
+  opacity: 0.5;
+}
+
+.today {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+.today .day-checkbox {
+  border-color: white;
+}
+
+.bulk-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.bulk-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--secondary);
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.bulk-actions button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  
+  .nav-buttons {
+    order: 1;
+  }
+  
+  .user-info {
+    order: 2;
+  }
+  
+  h1 {
+    order: 0;
+    margin-bottom: 0;
+  }
+}
